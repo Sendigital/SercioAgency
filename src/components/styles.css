@@ -6,6 +6,10 @@ nav{
     padding-block: 1rem;
 }
 
+.hamburger, #toggle{
+    display: none;
+}
+
 .navItems{
     display: flex;
     align-items: center;
@@ -17,7 +21,14 @@ nav{
     color: #000;
 }
 
-nav>button{
+.navRight{
+    display: flex;
+    width: 900px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn>button{
     border: 2px solid;
     background-color: #00535f;
     color: #fff;
@@ -33,7 +44,7 @@ nav>button{
     background-color: #f1ece4;
 }
 
-img{
+.headerImg>img{
     width: 500px;
     height: 500px;
 }
@@ -70,14 +81,123 @@ img{
     padding: .8rem;
 }
 
-input{
+.inputContainer>input{
     width: 70%;
     padding: .5rem;
     border: none;
     outline: none;
 }
 
+/* media query for nav and header */
+
+@media(min-width: 320px) and (max-width: 460px){
+    nav{
+        justify-content: space-between;
+    }
+
+    nav>h1{
+        margin-left: var(--marginLeft);
+    }
+
+    .hamburger{
+        display: block;
+        font-size: 25px;
+        margin-right: 1rem;
+        margin-bottom: 10px;
+    }
+    .navRight{
+        display: none;
+        position: absolute;
+        width: 80%;
+        padding: 1.8rem;
+        top: 6rem;
+        right: 3px;
+        z-index: 1;
+        background-color: #e6ddd2;
+        opacity: .97;
+        border-top: 4px solid #00535f;
+        border-bottom: 4px solid #00535f;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    .navItems{
+        padding: 0;
+        flex-direction: column;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+      }
+
+    .navItems > a {
+        width: 100%;
+        font-weight: 700;
+        color: #000;
+        font-size: 18px;
+        padding: 0.6rem;
+        text-align: center;
+  }
+    .btn{
+        width: 200px;
+        margin: auto;
+  }
+    .btn>button{
+        width: 100%;
+  }
+
+    #toggle:checked + .navRight {
+        display: block;
+        transform: none;
+  }
+
+   .header{
+        width: 390px;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 0;
+    }  
+    
+    .headerInfo{
+        width: var(--mwidth);
+    }
+
+    .headerInfo>h1{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+    }
+
+    .headerInfo>p{
+        margin-left: 2rem;
+    }
+
+    .inputContainer{
+        margin-left: 2rem;
+        width: 320px;
+    }
+
+    .inputContainer>button{
+        width: 50%;
+    }
+
+    .inputContainer>input{
+        width: 50%;
+    }
+
+    .headerImg{
+        width: 350px;
+        height: 50vh;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .headerImg>Img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
 /* styling for Services */
+
 
 .services{
     display: flex;
@@ -108,7 +228,6 @@ input{
 .servicesCards{
     display: flex;
     gap: 30px;
-    justify-content: space-between;
     margin-top: 2rem;
 }
 
@@ -152,6 +271,37 @@ input{
     justify-content: center;
     font-size: 28px;
     box-shadow: .1rem .2rem 1rem #000;
+}
+
+/* media query for Services */
+
+@media(min-width: 320px) and (max-width: 460px){
+    .services{
+        padding: 0!important;
+        flex-direction: column;
+    }
+
+    .servicesInfo{
+        margin-top: 1rem;
+    }
+    .servicesInfo>h1{
+        font-size: 2.5rem;
+    }
+
+    .servicesInfo>button{
+        margin-left: 6.5rem;
+    }
+
+    .servicesCards{
+        width: 300px;
+        flex-direction: column;
+    }
+
+    .card{
+        width: 83% !important;
+        margin-bottom: 3rem;
+
+    }
 }
 
 /* styling for Operations */
@@ -249,6 +399,82 @@ input{
     margin-top: 2rem;
 }
 
+/* media query for Operations */
+
+@media(min-width: 320px) and (max-width: 460px){
+
+    .operations{
+        padding: 0;
+    }
+
+    .hiring{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .hiring>img{
+        width: 390px;
+        height: 300px;
+    }
+
+    .hiringInfo{
+        margin-top: 3rem;
+    }
+
+    .hiringInfo>h1{
+        font-size: 2.5rem;
+        margin-left: 3rem;
+    }
+
+    .hiringInfo>p{
+        width: 350px;
+        margin-left: 30px;
+    }
+    .hiringInfo>button{
+        margin-left: 8rem;
+    }
+
+    .expenses{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .expensesInfo>h1{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+    }
+
+    .expensesInfo>p{
+        width: 340px;
+        margin-left: 25px;
+    }
+
+    .expenses>img{
+        width: 390px;
+        height: 30
+    }
+
+    .risk{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .risk>img{
+        width: 390px;
+        height: 350px;
+        margin-bottom: 2rem;
+    }
+
+    .riskInfo>h1{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+    }
+
+    .riskInfo>p{
+        width: 340px;
+        margin-left: 25px;
+    }
+
+}
+
 /* styling for Clientele */
 
 .clients{
@@ -343,6 +569,35 @@ input{
     padding: 1rem 2rem;
 }
 
+/* media query for Clientele */
+
+@media(min-width: 320px) and (max-width: 460px){
+    .clients{
+        padding: 0;
+    }
+
+   .clients>h1{
+        font-size: 2.5rem;
+        margin-top: 3rem;
+   }
+
+   .clients>p{
+        width: 350px;
+        margin-left: 20px;
+    }
+
+    .clientCards{
+        flex-direction: column;
+        align-content: space-between;
+        gap: 40px;
+        margin-left: 3.5rem;
+    }
+
+    .clients>button{
+        margin-bottom: 2rem;
+    }
+}
+
 /* styling for Questions */
 
 .qField{
@@ -415,6 +670,40 @@ input{
     font-size: 20px;
 }
 
+/* media query  for Questions */
+
+@media(min-width: 320px) and (max-width: 460px){
+    .qField{
+        padding: 0;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+   .askField{
+        width: 350px;
+   }
+
+   .askField>h1{
+        font-size: 2.5rem;
+        margin-left: 1rem;
+        margin-top: 4rem;
+   }
+
+   .askField>p{
+        width: 350px;
+        margin-left: 20px;
+    }
+
+    .askField>button{
+        margin-left: 1rem;
+    }
+
+    .answerField{
+        width: 350px;
+        margin-left: 1rem;
+   }
+}
+
 /* styling for Footer */
 
 #container{
@@ -483,4 +772,42 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* media query for Footer */
+
+@media(min-width: 320px) and (max-width: 460px){
+    
+    #container{
+        padding: 0;
+        padding-top: 3rem;
+    }
+    
+    .footerIndex{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .indexSections{
+        margin-bottom: 1.5rem;
+    }
+    .indexSections>h3{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .indexSections>ul{
+        text-align: center;
+    }
+
+    .socialMedia{
+        margin-left: 1.4rem;
+    }
+
+    .footerBar{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
 }
