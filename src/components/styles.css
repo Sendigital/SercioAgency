@@ -93,6 +93,7 @@ nav{
 @media(min-width: 320px) and (max-width: 460px){
     nav{
         justify-content: space-between;
+        width: 386px;
     }
 
     nav>h1{
@@ -126,7 +127,7 @@ nav{
         flex-direction: column;
         height: 50vh;
         justify-content: center;
-        align-items: center;
+        /* align-items: center; */
       }
 
     .navItems > a {
@@ -151,14 +152,14 @@ nav{
   }
 
    .header{
-        width: 400px;
+        width: 386px;
         justify-content: space-between;
         flex-direction: column;
         padding: 0;
     }  
     
     .headerInfo{
-        width: var(--mwidth);
+        width: 100%;
     }
 
     .headerInfo>h1{
